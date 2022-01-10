@@ -17,6 +17,7 @@ use axum::{
     AddExtensionLayer, Json, Router,
 };
 use clap::Parser;
+use metrics_exporter_prometheus::PrometheusBuilder;
 use futures_util::stream::Stream;
 use serde::Deserialize;
 use serde_with::{serde_as, DisplayFromStr};
@@ -67,6 +68,8 @@ async fn main() {
     .format_module_path(false)
     .format_target(false)
     .init();
+
+    PrometheusBuilder::new().install().expect("prometheus recorder");
 
     let opt = Opt::parse();
 

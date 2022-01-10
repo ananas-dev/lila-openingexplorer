@@ -24,6 +24,8 @@ env_logger = "0.9"
 futures-util = "0.3"
 log = "0.4"
 pin-project-lite = "0.2"
+metrics = "0.17"
+metrics-exporter-prometheus = "0.7"
 reqwest = { version = "0.11", features = ["stream"] }
 rocksdb = { version = "0.17", features = ["snappy"] }
 rustc-hash = "1"
